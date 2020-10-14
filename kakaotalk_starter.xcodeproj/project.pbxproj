@@ -15,6 +15,10 @@
 		6C92153224CF78DE00218F2A /* KakaoChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C92153024CF78DE00218F2A /* KakaoChatTableViewCell.swift */; };
 		6C92153324CF78DE00218F2A /* KakaoChatLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C92153124CF78DE00218F2A /* KakaoChatLandingViewController.swift */; };
 		6C92153524CF790900218F2A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C92153424CF790900218F2A /* Message.swift */; };
+		DA2319B725373499009CD552 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2319B525373499009CD552 /* MyCell.swift */; };
+		DA2319B825373499009CD552 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2319B625373499009CD552 /* MyCell.xib */; };
+		DA2319BC253734AB009CD552 /* YourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2319BA253734AB009CD552 /* YourCell.swift */; };
+		DA2319BD253734AB009CD552 /* YourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2319BB253734AB009CD552 /* YourCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		6C92153024CF78DE00218F2A /* KakaoChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoChatTableViewCell.swift; sourceTree = "<group>"; };
 		6C92153124CF78DE00218F2A /* KakaoChatLandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoChatLandingViewController.swift; sourceTree = "<group>"; };
 		6C92153424CF790900218F2A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DA2319B525373499009CD552 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		DA2319B625373499009CD552 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		DA2319BA253734AB009CD552 /* YourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCell.swift; sourceTree = "<group>"; };
+		DA2319BB253734AB009CD552 /* YourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 				6C92153124CF78DE00218F2A /* KakaoChatLandingViewController.swift */,
 				6C92153024CF78DE00218F2A /* KakaoChatTableViewCell.swift */,
 				6C92152224CF78B700218F2A /* Main.storyboard */,
+				DA2319B525373499009CD552 /* MyCell.swift */,
+				DA2319B625373499009CD552 /* MyCell.xib */,
+				DA2319BA253734AB009CD552 /* YourCell.swift */,
+				DA2319BB253734AB009CD552 /* YourCell.xib */,
 				6C92152524CF78B800218F2A /* Assets.xcassets */,
 				6C92152724CF78B800218F2A /* LaunchScreen.storyboard */,
 				6C92152A24CF78B800218F2A /* Info.plist */,
@@ -132,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C92152924CF78B800218F2A /* LaunchScreen.storyboard in Resources */,
+				DA2319BD253734AB009CD552 /* YourCell.xib in Resources */,
+				DA2319B825373499009CD552 /* MyCell.xib in Resources */,
 				6C92152624CF78B800218F2A /* Assets.xcassets in Resources */,
 				6C92152424CF78B700218F2A /* Main.storyboard in Resources */,
 			);
@@ -147,7 +161,9 @@
 				6C92151D24CF78B700218F2A /* AppDelegate.swift in Sources */,
 				6C92151F24CF78B700218F2A /* SceneDelegate.swift in Sources */,
 				6C92153524CF790900218F2A /* Message.swift in Sources */,
+				DA2319B725373499009CD552 /* MyCell.swift in Sources */,
 				6C92153324CF78DE00218F2A /* KakaoChatLandingViewController.swift in Sources */,
+				DA2319BC253734AB009CD552 /* YourCell.swift in Sources */,
 				6C92153224CF78DE00218F2A /* KakaoChatTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
