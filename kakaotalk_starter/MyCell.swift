@@ -10,6 +10,8 @@ import UIKit
 
 class MyCell: UITableViewCell {
 
+    @IBOutlet weak var inputTextField: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

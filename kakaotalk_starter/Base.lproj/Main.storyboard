@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -48,7 +48,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.10.30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHT-Hx-BK1">
-                                                    <rect key="frame" x="336" y="12.5" width="68" height="16"/>
+                                                    <rect key="frame" x="336" y="12.666666666666664" width="68" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -97,17 +97,21 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Chatting View Controller-->
         <scene sceneID="ImT-Cm-ZGc">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="w7w-2c-vbp" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="w7w-2c-vbp" customClass="ChattingViewController" customModule="kakaotalk_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="ps3-hx-hBT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xfj-Is-Ve0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="770"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xfj-Is-Ve0">
+                                <rect key="frame" x="0.0" y="94" width="414" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="w7w-2c-vbp" id="KSe-kS-KZC"/>
+                                    <outlet property="delegate" destination="w7w-2c-vbp" id="rwK-Mh-KB9"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIl-9z-2j3">
                                 <rect key="frame" x="0.0" y="814" width="414" height="48"/>
@@ -121,11 +125,19 @@
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="w7w-2c-vbp" id="D94-5W-NpG"/>
+                                        </connections>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D12-oD-aNY">
                                         <rect key="frame" x="348" y="0.0" width="66" height="48"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
-                                        <state key="normal" title="전송"/>
+                                        <state key="normal" title="전송">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendChat:" destination="w7w-2c-vbp" eventType="touchUpInside" id="zU1-ua-qBb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -139,20 +151,38 @@
                                     <constraint firstItem="4T2-Hi-qI8" firstAttribute="top" secondItem="bIl-9z-2j3" secondAttribute="top" constant="4" id="uqZ-8d-rCP"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhg-qM-1HZ">
+                                <rect key="frame" x="369.33333333333331" y="54.000000000000007" width="29.666666666666686" height="29.333333333333336"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" image="xmark.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="w7w-2c-vbp" eventType="touchUpInside" id="mhc-S9-ICB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2K5-83-djN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2K5-83-djN" firstAttribute="trailing" secondItem="mhg-qM-1HZ" secondAttribute="trailing" constant="15" id="4wo-ty-iDP"/>
                             <constraint firstItem="2K5-83-djN" firstAttribute="trailing" secondItem="Xfj-Is-Ve0" secondAttribute="trailing" id="8FA-4i-fX9"/>
-                            <constraint firstItem="Xfj-Is-Ve0" firstAttribute="top" secondItem="2K5-83-djN" secondAttribute="top" id="929-Md-D2u"/>
+                            <constraint firstItem="Xfj-Is-Ve0" firstAttribute="top" secondItem="2K5-83-djN" secondAttribute="top" constant="50" id="929-Md-D2u"/>
                             <constraint firstItem="Xfj-Is-Ve0" firstAttribute="leading" secondItem="2K5-83-djN" secondAttribute="leading" id="Dun-p0-n0H"/>
                             <constraint firstItem="2K5-83-djN" firstAttribute="bottom" secondItem="bIl-9z-2j3" secondAttribute="bottom" id="M89-Eg-ATC"/>
+                            <constraint firstItem="mhg-qM-1HZ" firstAttribute="top" secondItem="2K5-83-djN" secondAttribute="top" constant="10" id="k6L-gK-Em4"/>
                             <constraint firstItem="bIl-9z-2j3" firstAttribute="top" secondItem="Xfj-Is-Ve0" secondAttribute="bottom" id="m6g-tn-DcG"/>
                             <constraint firstItem="2K5-83-djN" firstAttribute="trailing" secondItem="bIl-9z-2j3" secondAttribute="trailing" id="psl-Ye-9C9"/>
                             <constraint firstItem="bIl-9z-2j3" firstAttribute="leading" secondItem="2K5-83-djN" secondAttribute="leading" id="xNB-Uc-iIu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EDl-as-NQd"/>
+                    <connections>
+                        <outlet property="bottomMargin" destination="M89-Eg-ATC" id="OPu-h7-nhg"/>
+                        <outlet property="chatTable" destination="Xfj-Is-Ve0" id="eSY-da-ijn"/>
+                        <outlet property="inputChat" destination="4T2-Hi-qI8" id="kXr-hj-2qn"/>
+                        <outlet property="inputChatConstraintHeight" destination="4Ha-M3-9NL" id="Sw1-Js-F52"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2MI-no-sP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,6 +191,7 @@
     </scenes>
     <resources>
         <image name="p1" width="711" height="711"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -169,6 +200,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

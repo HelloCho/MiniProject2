@@ -19,6 +19,7 @@
 		DA2319B825373499009CD552 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2319B625373499009CD552 /* MyCell.xib */; };
 		DA2319BC253734AB009CD552 /* YourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2319BA253734AB009CD552 /* YourCell.swift */; };
 		DA2319BD253734AB009CD552 /* YourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2319BB253734AB009CD552 /* YourCell.xib */; };
+		DA3667842539B340004DD005 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3667832539B340004DD005 /* ChattingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DA2319B625373499009CD552 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		DA2319BA253734AB009CD552 /* YourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCell.swift; sourceTree = "<group>"; };
 		DA2319BB253734AB009CD552 /* YourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourCell.xib; sourceTree = "<group>"; };
+		DA3667832539B340004DD005 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				6C92151C24CF78B700218F2A /* AppDelegate.swift */,
 				6C92151E24CF78B700218F2A /* SceneDelegate.swift */,
 				6C92153424CF790900218F2A /* Message.swift */,
+				DA3667832539B340004DD005 /* ChattingViewController.swift */,
 				6C92153124CF78DE00218F2A /* KakaoChatLandingViewController.swift */,
 				6C92153024CF78DE00218F2A /* KakaoChatTableViewCell.swift */,
 				6C92152224CF78B700218F2A /* Main.storyboard */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3667842539B340004DD005 /* ChattingViewController.swift in Sources */,
 				6C92151D24CF78B700218F2A /* AppDelegate.swift in Sources */,
 				6C92151F24CF78B700218F2A /* SceneDelegate.swift in Sources */,
 				6C92153524CF790900218F2A /* Message.swift in Sources */,
