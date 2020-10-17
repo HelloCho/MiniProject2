@@ -18,6 +18,7 @@ class KakaoChatLandingViewController: UIViewController {
 
     func setupTableView() {
         // TODO: TableView를 datasource을 설정해주세요.
+        // 무엇을 하는 메소드??
     }
 
 }
