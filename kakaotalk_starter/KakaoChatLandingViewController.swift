@@ -41,6 +41,13 @@ extension KakaoChatLandingViewController: UITableViewDataSource {
 
 extension KakaoChatLandingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "showChat", sender: indexPath.row)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showChat" {
+            let vc = segue.destination as? ChattingViewController
+            guard let index = sender as? Int else { return }
+            vc?.messageInfo = list[index]
+        }
     }
 }

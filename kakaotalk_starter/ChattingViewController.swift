@@ -19,7 +19,7 @@ class ChattingViewController: UIViewController {
     @IBOutlet weak var inputChatConstraintHeight: NSLayoutConstraint!
     
     var chatDatas = [String]()
-    var messageInfo: Message = Message(senderName: "", lastMessage: "", senderImageName: "", lastSentDate: "")
+    var messageInfo: Message? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +69,7 @@ class ChattingViewController: UIViewController {
         
         chatTable.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
     }
+    
 }
 
 extension ChattingViewController: UITableViewDataSource {
@@ -80,10 +81,13 @@ extension ChattingViewController: UITableViewDataSource {
         if(indexPath.row % 2 == 0) {
             let myCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyCell
             myCell.inputTextField.text = chatDatas[indexPath.row]
+            myCell.myImage.image = UIImage(named: "snoopy.jpg")
             return myCell
         } else {
             let yourCell = tableView.dequeueReusableCell(withIdentifier: "yourCell", for: indexPath) as! YourCell
             yourCell.inputTextField.text = chatDatas[indexPath.row]
+            let chatUserName = messageInfo?.senderImageName ?? ""
+            yourCell.yourImage.image = UIImage(named: "\(chatUserName).jpg")
             return yourCell
         }
     }

@@ -11,6 +11,7 @@ import UIKit
 class MyCell: UITableViewCell {
 
     @IBOutlet weak var inputTextField: UITextView!
+    @IBOutlet weak var myImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
